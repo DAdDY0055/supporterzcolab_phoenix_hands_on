@@ -200,13 +200,31 @@ $ nodebrew -v
 $ nodebrew ls-remote
 ```
 
----
++++
+
+```
+Fetching: https://nodejs.org/dist/v7.10.0/node-v7.10.0-darwin-x64.tar.gz
+Warning: Failed to create the file 
+Warning: /Users/whoami/.nodebrew/src/v7.10.0/node-v7.10.0-darwin-x64.ta
+Warning: r.gz: No such file or directory
+
+curl: (23) Failed writing body (0 != 941)
+download failed: https://nodejs.org/dist/v7.10.0/node-v7.10.0-darwin-x64.tar.gz
+```
+
+- 上記エラーが出た場合はディレクトリを作成する
+
+```
+mkdir -p ~/.nodebrew/src
+```
+
+
++++
 
 ```
 $ nodebrew install-binary v10.16.3
 ```
 →安定板(偶数番号)の最新を選択してください
-
 
 ```
 $ nodebrew ls
@@ -495,6 +513,12 @@ import socket from "./socket"  → // を削除
 
 - トップページ(http://localhost:4000)を見て、入力欄が追加されたことを確認
 
++++
+
+- コンソールログを見ると、まだ"Unabled Join"となっているはず
+
+<img width=80% alt="スクリーンショット 2019-10-24 18 37 58" src="https://user-images.githubusercontent.com/38724804/67490361-10e9a200-f6ae-11e9-99e2-19f78f8810ef.png">
+
 ---
 
 ### イベントリスナーを記載
@@ -538,6 +562,9 @@ export default socket
 ---
 
 - コンソールログから、"Joined successfully"となっていることを確認
+- ただし、まだサーバー側の処理が記載されていないため、チャットの投稿はあとちょっと！
+
+<img width=80% alt="スクリーンショット 2019-10-24 18 44 05" src="https://user-images.githubusercontent.com/38724804/67490512-5017f300-f6ae-11e9-9a92-53e3cc8d06ee.png">
 
 ---
 
