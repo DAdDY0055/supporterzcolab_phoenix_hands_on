@@ -1,5 +1,4 @@
-### 【ハンズオン】<br/>Elixir/Phoenixで<br/>リアルタイムChatアプリを作ろう！
-- Elixir/Phoenixを使って、簡単にチャットアプリを作成しよう！
+### 【ハンズオン】<br/>Elixir/Phoenixで<br/>リアルタイムChat<br/>アプリを作ろう！
 
 ---
 
@@ -233,7 +232,7 @@ https://nodejs.org/en/download/
 https://hexdocs.pm/phoenix/up_and_running.html
 
 ```
-$ mix phx.new hello `--no-ecto`
+$ mix phx.new hello --no-ecto
 ```
 - rails new などと同様のもの
 
