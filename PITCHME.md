@@ -331,7 +331,7 @@ Webpack is watching the files…
 
 - Request → Server → Response
 
-<img width=80% alt="web-apps-request-response-640x469" src="https://user-images.githubusercontent.com/38724804/67469128-b852de80-f686-11e9-9590-e7a43291d785.png">
+<img width=60% alt="web-apps-request-response-640x469" src="https://user-images.githubusercontent.com/38724804/67469128-b852de80-f686-11e9-9590-e7a43291d785.png">
 
 +++
 
@@ -343,9 +343,9 @@ Webpack is watching the files…
 
 +++
 
-- 1. clientでイベントが発生
-- 2. serverへメッセージ送信
-- 3. serverは接続している全クライアントへメッセージ送信
+1. clientでイベントが発生
+2. serverへメッセージ送信
+3. serverは接続している全クライアントへメッセージ送信
 
 ---
 
