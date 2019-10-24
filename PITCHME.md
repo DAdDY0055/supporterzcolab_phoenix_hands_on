@@ -19,7 +19,7 @@
 
 ---
 
-### 所属
+### 所属コミュニティ
 
 <img width=80% alt="スクリーンショット 2019-10-24 15 25 12" src="https://user-images.githubusercontent.com/38724804/67459049-9bacab80-f672-11e9-9158-74bfdd2470d2.png">
 
@@ -39,9 +39,9 @@
 
 +++
 
-### LT会やります
+### LT会やります！！(登壇者絶賛募集中)
 
-<img width=80% alt="スクリーンショット 2019-10-24 15 30 49" src="https://user-images.githubusercontent.com/38724804/67459390-70768c00-f673-11e9-84b4-1b7e95be2d0e.png">
+<img width=80% alt="スクリーンショット 2019-10-24 17 03 31" src="https://user-images.githubusercontent.com/38724804/67465500-42e40f80-f680-11e9-989f-669929097c55.png">
 
 - [TeckUp！ LT大会#2 in 代々木](https://teckup-tokyo.connpass.com/event/151574/) 
 
@@ -76,7 +76,7 @@
     - Nintendo Switchのプッシュ通知システム
       - 1,000万台以上の同時接続と1日あたり約20億の通知をさばきながら、現時点まで一度もクラスタ全体の停止してない。
 
-<img width="30%" alt="スクリーンショット 2019-10-24 15 59 54" src="https://user-images.githubusercontent.com/38724804/67461056-6ce50400-f677-11e9-8087-17d26d46f038.png">
+<img width="100" alt="スクリーンショット 2019-10-24 15 59 54" src="https://user-images.githubusercontent.com/38724804/67461056-6ce50400-f677-11e9-8087-17d26d46f038.png">
 
 +++
 
@@ -85,6 +85,8 @@
 - [大規模ゲーム開発で存在感を高めるErlang/Elixir ─ Nintendo Switch™とロマサガRSの事例から](https://employment.en-japan.com/engineerhub/entry/2019/08/01/103000#%E3%81%9D%E3%82%82%E3%81%9D%E3%82%82ErlangElixir%E3%81%A8%E3%81%AF)
 
 ---
+
+### Elixirとは？
 
 - RailsコミッターのJose Valimが開発しておりRubyっぽい(完全に見かけだけ)
   - Ruby:オブジェクト指向言語
@@ -99,7 +101,7 @@
   - Elixir/Phoenixの開発者が、Railsのcontributorであったため、Railsと似たような構成になっている。
   - MVCモデル
 
-<img width="30%" alt="スクリーンショット 2019-10-24 15 58 51" src="https://user-images.githubusercontent.com/38724804/67460924-327b6700-f677-11e9-8d36-0ba6135c640b.png">
+<img width=30% alt="スクリーンショット 2019-10-24 15 58 51" src="https://user-images.githubusercontent.com/38724804/67460924-327b6700-f677-11e9-8d36-0ba6135c640b.png">
 
 +++
 
@@ -115,8 +117,9 @@
     - View(ビュー）:ユーザーへの画面表示
     - Controller(コントローラー):ユーザーのアクセス制御
 
-(参考)
-- [画像で図解！サルでもわかるRailsにおけるMVC入門](https://www.yuta-u.com/programing/rails_mvc)
++++
+
+- (参考)[画像で図解！サルでもわかるRailsにおけるMVC入門](https://www.yuta-u.com/programing/rails_mvc)
 
 ---
 
@@ -255,27 +258,54 @@ Webpack is watching the files…
 
 ---
 
-### MVC FWについてざっと話す
+### MVC FWについておさらい
 
-#### Router
+<img width="50%" alt="スクリーンショット 2019-10-24 16 02 04" src="https://user-images.githubusercontent.com/38724804/67461153-a74ea100-f677-11e9-886e-1d3dba60671d.png">
 
-#### Contoroller
++++
 
-#### Template/View
+### PhoenixでのMVC
+
+#### Controller
+- Endpoint
+  - /lib/hello_web/endpoint.ex
+
+- Router
+  - /lib/hello_web/router.ex
+
++++
+
+#### View(ビュー）
+
+- Viewファイル
+  - /lib/hello_web/views 配下のファイル
+  - Template(およびLayout)をレンダリングする
+
+- Template
+  - /lib/hello_web/templates 配下のファイル(.eex)
+  - HTML形式で表示するためのファイル
+
++++
+
+#### Model(モデル）
+
+- DBアクセスし、データの保存や取り出しなどをする要素ですが、今回は利用しないため割愛
 
 ---
 
 ### Chatアプリの作成
 
-どのような機能を使ってリアルタイムChatを実現するのか？
+- リアルタイムChatを実現する機能
+- WebSocket
 
-#### WebSocket
++++
 
 通常のHTTP通信
 
 ・Request → Server → Response
 ・常時接続型
 
++++
 
 WebSocket
 
