@@ -515,7 +515,7 @@ import socket from "./socket"  → // を削除
 
 +++
 
-- コンソールログを見ると、まだ"Unabled Join"となっているはず
+- コンソールログを見ると、まだ"Unable to join"となっているはず
 
 <img width=80% alt="スクリーンショット 2019-10-24 18 37 58" src="https://user-images.githubusercontent.com/38724804/67490361-10e9a200-f6ae-11e9-99e2-19f78f8810ef.png">
 
@@ -562,7 +562,7 @@ export default socket
 ---
 
 - コンソールログから、"Joined successfully"となっていることを確認
-- ただし、まだサーバー側の処理が記載されていないため、チャットの投稿はあとちょっと！
+- ただし、まだサーバー側の処理が記載されていないため、チャットの投稿はまだできない(あとちょっと！)
 
 <img width=80% alt="スクリーンショット 2019-10-24 18 44 05" src="https://user-images.githubusercontent.com/38724804/67490512-5017f300-f6ae-11e9-9a92-53e3cc8d06ee.png">
 
