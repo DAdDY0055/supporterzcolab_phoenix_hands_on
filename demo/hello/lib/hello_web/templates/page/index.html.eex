@@ -1,2 +1,5 @@
 <div id="messages"></div>
-<input id="chat-input" type="text"></input>
+<div class="input-group">
+  <input id="user-input" type="text" class="form-control" placeholder="@user">
+  <input id="chat-input" type="text" placeholder="メッセージ"></input>
+</div>
