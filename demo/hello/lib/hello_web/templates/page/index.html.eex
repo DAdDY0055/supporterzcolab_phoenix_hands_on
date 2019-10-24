@@ -1,5 +1,5 @@
 <div id="messages"></div>
 <div class="input-group">
-  <input id="user-input" type="text" class="form-control" placeholder="@user">
+  <input id="user-input" type="text" placeholder="@user">
   <input id="chat-input" type="text" placeholder="メッセージ"></input>
 </div>

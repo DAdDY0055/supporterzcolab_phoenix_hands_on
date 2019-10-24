@@ -74,11 +74,13 @@
   - Erlangは並行性や耐障害性に優れ、ゲームなどでよく使われている
     - LINEの裏
     - Nintendo Switchのプッシュ通知システム
-      - 1,000万台以上の同時接続と1日あたり約20億の通知をさばきながら、現時点まで一度もクラスタ全体の停止には至っていません。
+      - 1,000万台以上の同時接続と1日あたり約20億の通知をさばきながら、現時点まで一度もクラスタ全体の停止してない。
 
-<img width="100" alt="スクリーンショット 2019-10-24 15 59 54" src="https://user-images.githubusercontent.com/38724804/67461056-6ce50400-f677-11e9-8087-17d26d46f038.png">
+<img width="30%" alt="スクリーンショット 2019-10-24 15 59 54" src="https://user-images.githubusercontent.com/38724804/67461056-6ce50400-f677-11e9-8087-17d26d46f038.png">
 
 +++
+
+### (参考)Erlang & Elixir Fest 2019 レボ
 
 - [大規模ゲーム開発で存在感を高めるErlang/Elixir ─ Nintendo Switch™とロマサガRSの事例から](https://employment.en-japan.com/engineerhub/entry/2019/08/01/103000#%E3%81%9D%E3%82%82%E3%81%9D%E3%82%82ErlangElixir%E3%81%A8%E3%81%AF)
 
@@ -97,18 +99,21 @@
   - Elixir/Phoenixの開発者が、Railsのcontributorであったため、Railsと似たような構成になっている。
   - MVCモデル
 
-<img width="100" alt="スクリーンショット 2019-10-24 15 58 51" src="https://user-images.githubusercontent.com/38724804/67460924-327b6700-f677-11e9-8d36-0ba6135c640b.png">
+<img width="30%" alt="スクリーンショット 2019-10-24 15 58 51" src="https://user-images.githubusercontent.com/38724804/67460924-327b6700-f677-11e9-8d36-0ba6135c640b.png">
 
 +++
 
 (補足)
 - MVCモデル
+<img width="50%" alt="スクリーンショット 2019-10-24 16 02 04" src="https://user-images.githubusercontent.com/38724804/67461153-a74ea100-f677-11e9-886e-1d3dba60671d.png">
+
++++
+
+- MVCモデル
   - 3つの要素ごとに役割が分かれている
     - Model(モデル):DBの管理
     - View(ビュー）:ユーザーへの画面表示
     - Controller(コントローラー):ユーザーのアクセス制御
-
-<img width="150" alt="スクリーンショット 2019-10-24 16 02 04" src="https://user-images.githubusercontent.com/38724804/67461153-a74ea100-f677-11e9-886e-1d3dba60671d.png">
 
 (参考)
 - [画像で図解！サルでもわかるRailsにおけるMVC入門](https://www.yuta-u.com/programing/rails_mvc)
@@ -306,7 +311,7 @@ socket "/socket", HelloWeb.UserSocket,
 
 ### socketの設定
 
-> lib/hello_web/channels/user_socket.ex
+- lib/hello_web/channels/user_socket.ex
 
 channelを有効にする　　
 
@@ -329,6 +334,9 @@ RoomChannelの設定をするために、以下のファイルを作成します
 
 - lib/hello_web/channels/room_channel.ex
 
+---
+
+- lib/hello_web/channels/room_channel.ex
 ```
 defmodule HelloWeb.RoomChannel do
   use Phoenix.Channel
@@ -353,6 +361,8 @@ end
 
 - assets/js/socket.js
 
+---
+
 ```
 // assets/js/socket.js
 // ...
@@ -371,19 +381,26 @@ export default socket
 
 ### socket接続用のJSの読み込み
 
-- assets/js/socket.js
-
-はどこから呼ぶかというと、
+socket接続用のJS(assets/js/socket.js)を読み込むため、
 
 - assets/js/app.js
+を修正
 
-から呼ばれるようにします
++++
 
-※/hello/lib/hello_web/templates/layout/app.html.eex でassets/js/app.jsを実行
+- /hello/lib/hello_web/templates/layout/app.html.eex でassets/js/app.jsを読み込んでいる。
+
+```
+...
+    </main>
+    <script type="text/javascript" src="<%= Routes.static_path(@conn, "/js/app.js") %>"></script>
+  </body>
+</html>
+```
 
 ---
 
-ファイルの下の方に
+ファイルの下の方で
 
 ```
 import socket from "./socket"
@@ -392,18 +409,7 @@ import socket from "./socket"
 がコメントアウトされているのでこちらを外す
 
 ```
-// We need to import the CSS so that webpack will load it.
-// The MiniCssExtractPlugin is used to separate it out into
-// its own CSS file.
-import css from "../css/app.css"
-
-// webpack automatically bundles all modules in your
-// entry points. Those entry points can be configured
-// in "webpack.config.js".
-//
-// Import dependencies
-//
-import "phoenix_html"
+...
 
 // Import local files
 //
@@ -421,10 +427,13 @@ import socket from "./socket"  → // を削除
 
 ```
 <div id="messages"></div>
-<input id="chat-input" type="text"></input>
+<div class="input-group">
+  <input id="user-input" type="text" placeholder="@user">
+  <input id="chat-input" type="text" placeholder="メッセージ"></input>
+</div>
 ```
 
-※名前入力する奴にする記載
+- トップページ(http://localhost:4000)を見て、入力欄が追加されたことを確認
 
 ---
 
@@ -433,23 +442,31 @@ import socket from "./socket"  → // を削除
 - assets/js/socket.js
 
 ```
+...
+
 // Now that you are connected, you can join channels with a topic:
-let channel           = socket.channel("room:lobby", {})  → "room:lobby"に書き換える
+let channel           = socket.channel("room:lobby", {})  // "room:lobby"に書き換える
+
+// ここから追記
 let chatInput         = document.querySelector("#chat-input") → ここから、
+let chatInput         = document.querySelector("#chat-input")
 let messagesContainer = document.querySelector("#messages")
 
+// エンターが押された時の処理
 chatInput.addEventListener("keypress", event => {
   if(event.keyCode === 13){
-    channel.push("new_msg", {body: chatInput.value})
+    channel.push("new_msg", {user: userInput.value, chat: chatInput.value})
     chatInput.value = ""
   }
 })
 
+// "new_msg"がチャンネルに通知された時の処理
 channel.on("new_msg", payload => {
   let messageItem = document.createElement("li")
-  messageItem.innerText = `[${Date()}] ${payload.body}`
+  messageItem.innerText = `[${Date()}] [${payload.user}] ${payload.chat}`
   messagesContainer.appendChild(messageItem)
-})                                                            → ここまで追加
+})
+// ここまで追加
 
 channel.join()
   .receive("ok", resp => { console.log("Joined successfully", resp) })
@@ -458,12 +475,13 @@ channel.join()
 export default socket
 ```
 
+---
 
-コンソールログから、"Joined successfully"となっていることを確認
+- コンソールログから、"Joined successfully"となっていることを確認
 
 ---
 
-"new_msg" が実行されて受け取るイベントを記載
+"new_msg" が実行されてサーバーが実行する処理を記載
 
 - /hello/lib/hello_web/channels/room_channel.ex
 
@@ -479,10 +497,12 @@ defmodule HelloWeb.RoomChannel do
     {:error, %{reason: "unauthorized"}}
   end
 
-  def handle_in("new_msg", %{"body" => body}, socket) do → ここから、
-    broadcast!(socket, "new_msg", %{body: body})
+  # ここから
+  def handle_in("new_msg", payload,  socket) do
+    broadcast!(socket, "new_msg", payload)
     {:noreply, socket}
-  end                                                    → ここまで
+  end
+  # ここまで追記
 end
 ```
 

@@ -9,8 +9,10 @@ defmodule HelloWeb.RoomChannel do
     {:error, %{reason: "unauthorized"}}
   end
 
+  # ここから
   def handle_in("new_msg", payload,  socket) do
     broadcast!(socket, "new_msg", payload)
     {:noreply, socket}
   end
+  # ここまで追記
 end
