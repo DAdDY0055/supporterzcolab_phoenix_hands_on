@@ -1,5 +1,5 @@
-### 【ハンズオン】Elixir/PhoenixでリアルタイムChatアプリを作ろう！
-###  Elixir/Phoenixを使って、簡単にチャットアプリを作成しよう！
+### 【ハンズオン】<br/>Elixir/PhoenixでリアルタイムChatアプリを作ろう！
+- Elixir/Phoenixを使って、簡単にチャットアプリを作成しよう！
 
 ---
 
@@ -22,6 +22,8 @@
 ### 所属
 
 <img width=80% alt="スクリーンショット 2019-10-24 15 25 12" src="https://user-images.githubusercontent.com/38724804/67459049-9bacab80-f672-11e9-9158-74bfdd2470d2.png">
+
+- [TeckUp connpassページ](https://teckup-tokyo.connpass.com/h) 
 
 +++
 
@@ -484,6 +486,8 @@ defmodule HelloWeb.RoomChannel do
 end
 ```
 
+---
+
 ### 動かしてみる
 
 ブラウザで
@@ -491,7 +495,7 @@ http://localhost:4000 を複数タブで表示
 
 片方で投稿すると、もう片方でも通知できればOK！
 
-+++
+---
 
 ### ご清聴ありがとうございました
 
