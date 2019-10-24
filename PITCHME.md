@@ -408,9 +408,6 @@ defmodule HelloWeb.RoomChannel do
     {:ok, socket}
   end
 
-  def join("room:" <> _private_room_id, _params, _socket) do
-    {:error, %{reason: "unauthorized"}}
-  end
 end
 ```
 
@@ -511,7 +508,7 @@ import socket from "./socket"  → // を削除
 let channel           = socket.channel("room:lobby", {})  // "room:lobby"に書き換える
 
 // ここから追記
-let chatInput         = document.querySelector("#chat-input") → ここから、
+let userInput         = document.querySelector("#user-input")
 let chatInput         = document.querySelector("#chat-input")
 let messagesContainer = document.querySelector("#messages")
 
@@ -556,10 +553,6 @@ defmodule HelloWeb.RoomChannel do
     {:ok, socket}
   end
 
-  def join("room:" <> _private_room_id, _params, _socket) do
-    {:error, %{reason: "unauthorized"}}
-  end
-
   # ここから
   def handle_in("new_msg", payload,  socket) do
     broadcast!(socket, "new_msg", payload)
@@ -577,6 +570,8 @@ end
 http://localhost:4000 を複数タブで表示
 
 片方で投稿すると、もう片方でも通知できればOK！
+
+<img width=70% alt="スクリーンショット 2019-10-24 18 47 01" src="https://user-images.githubusercontent.com/38724804/67474077-ce649d00-f68e-11e9-8e66-634b96b52cdf.png">
 
 ---
 
