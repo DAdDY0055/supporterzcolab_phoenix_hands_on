@@ -13,32 +13,33 @@
     - インフラ(ちょっと)〜サーバーサイド(メイン)
     - 最近、フロントでVue.jsを書いたり
 
-- [Twitter @arakawa_gios](https://twitter.com/arakawa_gios)  
+- [Twitter @arakawa_gios](https://twitter.com/arakawa_gios) 
+
 後日質問・指摘等あればこちらへどうぞ
 
 ---
 
 ### 所属
 
-<img width="429" alt="スクリーンショット 2019-10-24 15 25 12" src="https://user-images.githubusercontent.com/38724804/67459049-9bacab80-f672-11e9-9158-74bfdd2470d2.png">
+<img width=80% alt="スクリーンショット 2019-10-24 15 25 12" src="https://user-images.githubusercontent.com/38724804/67459049-9bacab80-f672-11e9-9158-74bfdd2470d2.png">
 
 +++
 
-<img width="321" alt="スクリーンショット 2019-10-24 15 27 59" src="https://user-images.githubusercontent.com/38724804/67459344-50df6380-f673-11e9-9734-20627d9c08d9.png">
+<img width=80% alt="スクリーンショット 2019-10-24 15 27 59" src="https://user-images.githubusercontent.com/38724804/67459344-50df6380-f673-11e9-9734-20627d9c08d9.png">
 
 - [TeckUp connpassページ](https://teckup-tokyo.connpass.com/h) 
 
 ---
 
-### やってること
+### コミュニティでやってること
 
-<img width="397" alt="スクリーンショット 2019-10-24 15 28 16" src="https://user-images.githubusercontent.com/38724804/67459375-66548d80-f673-11e9-9a67-7316d6c4e8d8.png">
+<img width=80% alt="スクリーンショット 2019-10-24 15 28 16" src="https://user-images.githubusercontent.com/38724804/67459375-66548d80-f673-11e9-9a67-7316d6c4e8d8.png">
 
 +++
 
 ### LT会やります
 
-<img width="722" alt="スクリーンショット 2019-10-24 15 30 49" src="https://user-images.githubusercontent.com/38724804/67459390-70768c00-f673-11e9-84b4-1b7e95be2d0e.png">
+<img width=80% alt="スクリーンショット 2019-10-24 15 30 49" src="https://user-images.githubusercontent.com/38724804/67459390-70768c00-f673-11e9-84b4-1b7e95be2d0e.png">
 
 - [TeckUp！ LT大会#2 in 代々木](https://teckup-tokyo.connpass.com/event/151574/) 
 
@@ -96,7 +97,7 @@
 
 <img width="100" alt="スクリーンショット 2019-10-24 15 58 51" src="https://user-images.githubusercontent.com/38724804/67460924-327b6700-f677-11e9-8d36-0ba6135c640b.png">
 
-+++
++++
 
 (補足)
 - MVCモデル
@@ -273,22 +274,22 @@ WebSocket
 
 Channelを購読→イベントがあると購読している読者に通知
 
->1. clientでイベントが発生
->2. serverへメッセージ送信
->3. serverは接続している全クライアントへメッセージ送信
+- 1. clientでイベントが発生
+- 2. serverへメッセージ送信
+- 3. serverは接続している全クライアントへメッセージ送信
 
 ---
 
 ### Chatアプリの作成
 
 以下を参考にしながら作成
-> https://hexdocs.pm/phoenix/channels.html
+- https://hexdocs.pm/phoenix/channels.html
 
 ---
 
 ### endpointの設定
 
-> lib/hello_web/endpoint.ex
+- lib/hello_web/endpoint.ex
 
 /socketを有効にする
 
@@ -324,7 +325,7 @@ defmodule HelloWeb.UserSocket do
 
 RoomChannelの設定をするために、以下のファイルを作成します。
 
-> lib/hello_web/channels/room_channel.ex
+- lib/hello_web/channels/room_channel.ex
 
 ```
 defmodule HelloWeb.RoomChannel do
@@ -348,7 +349,7 @@ end
 
 処理は以下のファイルで、デフォルトで用意されている。
 
-> assets/js/socket.js
+- assets/js/socket.js
 
 ```
 // assets/js/socket.js
@@ -368,15 +369,17 @@ export default socket
 
 ### socket接続用のJSの読み込み
 
-> assets/js/socket.js
+- assets/js/socket.js
 
 はどこから呼ぶかというと、
 
-> assets/js/app.js
+- assets/js/app.js
 
 から呼ばれるようにします
 
 ※/hello/lib/hello_web/templates/layout/app.html.eex でassets/js/app.jsを実行
+
+---
 
 ファイルの下の方に
 
@@ -410,7 +413,7 @@ import socket from "./socket"  → // を削除
 
 ### テンプレート(HTML)に入力欄を記載
 
-> ib/hello_web/templates/page/index.html.eex
+- ib/hello_web/templates/page/index.html.eex
 
 まるっと全部削除して以下を記載
 
@@ -425,7 +428,7 @@ import socket from "./socket"  → // を削除
 
 ### イベントリスナーを記載
 
-> assets/js/socket.js
+- assets/js/socket.js
 
 ```
 // Now that you are connected, you can join channels with a topic:
@@ -460,7 +463,7 @@ export default socket
 
 "new_msg" が実行されて受け取るイベントを記載
 
->/hello/lib/hello_web/channels/room_channel.ex
+- /hello/lib/hello_web/channels/room_channel.ex
 
 ```
 defmodule HelloWeb.RoomChannel do
@@ -487,3 +490,11 @@ end
 http://localhost:4000 を複数タブで表示
 
 片方で投稿すると、もう片方でも通知できればOK！
+
++++
+
+### ご清聴ありがとうございました
+
+ご質問・ご指摘がありましたら、<br>[Twitter @arakawa_gios](https://twitter.com/arakawa_gios)までお願いします
+
+LTスライド: https://gitpitch.com/DAdDY0055/supporterzcolab_phoenix_hands_on#/18
