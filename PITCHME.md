@@ -339,9 +339,7 @@ Webpack is watching the files…
 
 - Channelを購読→イベントがあると購読している読者に通知
 
-<img width=80% alt="broadcast" src="https://user-images.githubusercontent.com/38724804/67469165-c56fcd80-f686-11e9-81b4-a610c59043d9.png">
-
-+++
+<img width=40% alt="broadcast" src="https://user-images.githubusercontent.com/38724804/67469165-c56fcd80-f686-11e9-81b4-a610c59043d9.png">
 
 1. clientでイベントが発生
 2. serverへメッセージ送信
