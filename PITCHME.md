@@ -1,4 +1,4 @@
-### 【ハンズオン】<br/>Elixir/Phoenixで<br/>リアルタイムChat<br/>アプリを作ろう！
+## 【ハンズオン】<br/>Elixir/Phoenixで<br/>リアルタイムChat<br/>アプリを作ろう！
 
 ---
 
