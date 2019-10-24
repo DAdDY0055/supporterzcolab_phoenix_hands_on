@@ -1,5 +1,5 @@
-# 【ハンズオン】Elixir/PhoenixでリアルタイムChatアプリを作ろう！
-## Elixir/Phoenixを使って、簡単にチャットアプリを作成しよう！
+### 【ハンズオン】Elixir/PhoenixでリアルタイムChatアプリを作ろう！
+###  Elixir/Phoenixを使って、簡単にチャットアプリを作成しよう！
 
 ---
 
@@ -7,68 +7,140 @@
 
 中原 拓哉
 
-経歴
-- 金融系SIerでインフラエンジニアを6年
-- 今年3月よりバックエンドエンジニアとして転職
-  - インフラ(ちょっと)〜サーバーサイド(メイン)
-  - 最近、フロントでVue.jsを書いたり
+- 経歴
+  - 金融系SIerでインフラエンジニアを6年
+  - 今年3月よりバックエンドエンジニアとして転職
+    - インフラ(ちょっと)〜サーバーサイド(メイン)
+    - 最近、フロントでVue.jsを書いたり
+
+- [Twitter @arakawa_gios](https://twitter.com/arakawa_gios)  
+後日質問・指摘等あればこちらへどうぞ
+
+---
+
+### 所属
+
+<img width="429" alt="スクリーンショット 2019-10-24 15 25 12" src="https://user-images.githubusercontent.com/38724804/67459049-9bacab80-f672-11e9-9158-74bfdd2470d2.png">
+
++++
+
+<img width="321" alt="スクリーンショット 2019-10-24 15 27 59" src="https://user-images.githubusercontent.com/38724804/67459344-50df6380-f673-11e9-9734-20627d9c08d9.png">
+
+- [TeckUp connpassページ](https://teckup-tokyo.connpass.com/h) 
+
+---
+
+### やってること
+
+<img width="397" alt="スクリーンショット 2019-10-24 15 28 16" src="https://user-images.githubusercontent.com/38724804/67459375-66548d80-f673-11e9-9a67-7316d6c4e8d8.png">
+
++++
+
+### LT会やります
+
+<img width="722" alt="スクリーンショット 2019-10-24 15 30 49" src="https://user-images.githubusercontent.com/38724804/67459390-70768c00-f673-11e9-84b4-1b7e95be2d0e.png">
+
+- [TeckUp！ LT大会#2 in 代々木](https://teckup-tokyo.connpass.com/event/151574/) 
 
 ---
 
 ### 今日やること
+- 今日作るもの(5分)
+- Elixir/Phoenixとは(10分)
+- ハンズオン(50分)
+- 質疑応答(20分)
+- 懇親会(30分)
 
-- Elixir/Phoenixを使ったチャットアプリの作成
+---
 
-demoサイト　
-　
+### 今日作るもの
 
-demoサイトのURLはる
+- Elixir/Phoenixを使ったチャットアプリ
+  - demoサイト　
+  - https://chat-hands-on-demo.herokuapp.com/
 
 ---
 
 ### Elixir/Phoenixとは
 
+---
+
+### Elixirとは？
+
 - ErlangのVM上(=EVM)で動く関数型言語
   - Erlangは並行性や耐障害性に優れ、ゲームなどでよく使われている
-  - LINEでも使われている
-  - Nintendo Switchのプッシュ通知システム
-    - 最大想定で1億接続のスケーラビリティを、最大でも数秒の遅延で達成する
-    - 1,000万台以上の同時接続と1日あたり約20億の通知をさばきながら、現時点まで一度もクラスタ全体の停止には至っていません。
+    - LINEの裏
+    - Nintendo Switchのプッシュ通知システム
+      - 1,000万台以上の同時接続と1日あたり約20億の通知をさばきながら、現時点まで一度もクラスタ全体の停止には至っていません。
 
-> https://employment.en-japan.com/engineerhub/entry/2019/08/01/103000#%E3%81%9D%E3%82%82%E3%81%9D%E3%82%82ErlangElixir%E3%81%A8%E3%81%AF
+<img width="100" alt="スクリーンショット 2019-10-24 15 59 54" src="https://user-images.githubusercontent.com/38724804/67461056-6ce50400-f677-11e9-8087-17d26d46f038.png">
 
-　→ オブジェクト思考と、関数型の違い
++++
 
-- RailsコミッターのJose Valimが開発ておりRubyっぽい(完全に見かけだけ)
-
-- いま学ぶべき将来性のあるプログラミング言語9選  第6位
-
-> https://www.rankred.com/new-programming-languages-to-learn/
-
+- [大規模ゲーム開発で存在感を高めるErlang/Elixir ─ Nintendo Switch™とロマサガRSの事例から](https://employment.en-japan.com/engineerhub/entry/2019/08/01/103000#%E3%81%9D%E3%82%82%E3%81%9D%E3%82%82ErlangElixir%E3%81%A8%E3%81%AF)
 
 ---
 
-### ハンズオン・やってみる
+- RailsコミッターのJose Valimが開発しておりRubyっぽい(完全に見かけだけ)
+  - Ruby:オブジェクト指向言語
+  - Elixir:関数型言語
+
+- [いま学ぶべき将来性のあるプログラミング言語9選 第6位](https://www.rankred.com/new-programming-languages-to-learn/)
+
+---
+
+### Phoenixとは？
+- Elixir製のWebフレームワーク
+  - Elixir/Phoenixの開発者が、Railsのcontributorであったため、Railsと似たような構成になっている。
+  - MVCモデル
+
+<img width="100" alt="スクリーンショット 2019-10-24 15 58 51" src="https://user-images.githubusercontent.com/38724804/67460924-327b6700-f677-11e9-8d36-0ba6135c640b.png">
+
++++
+
+(補足)
+- MVCモデル
+  - 3つの要素ごとに役割が分かれている
+    - Model(モデル):DBの管理
+    - View(ビュー）:ユーザーへの画面表示
+    - Controller(コントローラー):ユーザーのアクセス制御
+
+<img width="150" alt="スクリーンショット 2019-10-24 16 02 04" src="https://user-images.githubusercontent.com/38724804/67461153-a74ea100-f677-11e9-886e-1d3dba60671d.png">
+
+(参考)
+- [画像で図解！サルでもわかるRailsにおけるMVC入門](https://www.yuta-u.com/programing/rails_mvc)
+
+---
+
+### ハンズオン
+
+- スライドを元に実施していきますが、うまく動かない点や、気になる点があれば気にせず手をあげてご質問ください。
 
 ---
 
 ### インストール
-> https://hexdocs.pm/phoenix/installation.html
 
-#### Elixirのインストール
+- 公式ガイドを元にインストール
+https://hexdocs.pm/phoenix/installation.html
 
+### Elixirのインストール
+
+```
 $ brew update 
+```
 
+```
 $ brew install elixir 
+```
 
-> https://elixir-lang.org/install.html#macos
+https://elixir-lang.org/install.html#macos
 
-※home brewがない人はインストール
-> https://brew.sh/index_ja
+※home brewがない人はこちらでインストール
+https://brew.sh/index_ja
 
 ---
 
-#### Phoenixのインストール
+### Phoenixのインストール
 
 ##### Elixirがインストールされていることを確認 
 ```
@@ -84,7 +156,7 @@ $ mix archive.install hex phx_new 1.4.10
 
 ---
 
-#### node.jsのインストール
+### node.jsのインストール
 
 HomebrewからDL
 
@@ -97,6 +169,8 @@ $ nodebrew -v
 $ nodebrew ls-remote
 ```
 
+---
+
 ```
 $ nodebrew install-binary v10.16.3
 ```
@@ -108,32 +182,32 @@ $ nodebrew ls
 $ nodebrew use v10.16.3
 ```
 
++++
+
 (参考)
-> https://qiita.com/kyosuke5_20/items/c5f68fc9d89b84c0df09
+https://qiita.com/kyosuke5_20/items/c5f68fc9d89b84c0df09
 
 HPからDL  
-> https://nodejs.org/en/download/
-
+https://nodejs.org/en/download/
 
 ---
 
 ### プロジェクトの作成
 
-
 ---
 
 ### Phoenixを使って、大本となるアプリを作成
 
-> https://hexdocs.pm/phoenix/up_and_running.html
+https://hexdocs.pm/phoenix/up_and_running.html
 
 ```
 $ mix phx.new hello `--no-ecto`
 ```
+- rails new などと同様のもの
 
-　→ rails new などと同じ
+- PhoenixはDB操作を行う際、主に`Ecto`と言うライブラリを利用しますが、今回はDBを利用しないため、`--no-ecto`オプションを付与してください
 
->　→ PhoenixはDB操作を行う際、主に`Ecto`と言うライブラリを利用しますが、今回はDBを利用しないため、`--no-ecto`オプションを付与してください
-
+---
 
 ```
 mix phx.new hello --no-ecto
@@ -166,12 +240,13 @@ Webpack is watching the files…
 ...
 ```
 
-> http://localhost:4000 
+- http://localhost:4000 
 にアクセス！！
 
-→ Phoenixのトップページにアクセス
+  - Phoenixのトップページにアクセス
 
 ---
+
 ### MVC FWについてざっと話す
 
 #### Router
