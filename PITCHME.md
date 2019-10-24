@@ -1,15 +1,15 @@
-### 【ハンズオン】<br/>Elixir/PhoenixでリアルタイムChatアプリを作ろう！
+### 【ハンズオン】<br/>Elixir/Phoenixで<br/>リアルタイムChatアプリを作ろう！
 - Elixir/Phoenixを使って、簡単にチャットアプリを作成しよう！
 
 ---
 
 ### 自己紹介
 
-中原 拓哉
+中原 拓哉([Twitter: Taku](https://twitter.com/arakawa_gios))
 
 - 経歴
   - 金融系SIerでインフラエンジニアを6年
-  - 今年3月よりバックエンドエンジニアとして転職
+  - 今年3月よりバックエンドエンジニアとしてWeb系に転職
     - インフラ(ちょっと)〜サーバーサイド(メイン)
     - 最近、フロントでVue.jsを書いたり
 
@@ -71,17 +71,38 @@
 ### Elixirとは？
 
 - ErlangのVM上(=EVM)で動く関数型言語
+
+<img width=50% alt="スクリーンショット 2019-10-24 15 59 54" src="https://user-images.githubusercontent.com/38724804/67461056-6ce50400-f677-11e9-8087-17d26d46f038.png">
+
++++
+
+- ElixirへのHello World
+
+```
+defmodule Hello do
+  def world(language) do
+    IO.puts "Hello #{language} World!"
+  end
+end
+```
+
+```
+iex(14)> Hello.world(Elixir)
+Hello Elixir World!
+:ok
+```
+
++++
+
+### Elixirとは？
+
+- 特徴・利用されている箇所
   - Erlangは並行性や耐障害性に優れ、ゲームなどでよく使われている
     - LINEの裏
     - Nintendo Switchのプッシュ通知システム
       - 1,000万台以上の同時接続と1日あたり約20億の通知をさばきながら、現時点まで一度もクラスタ全体の停止してない。
 
-<img width="100" alt="スクリーンショット 2019-10-24 15 59 54" src="https://user-images.githubusercontent.com/38724804/67461056-6ce50400-f677-11e9-8087-17d26d46f038.png">
-
-+++
-
 ### (参考)Erlang & Elixir Fest 2019 レボ
-
 - [大規模ゲーム開発で存在感を高めるErlang/Elixir ─ Nintendo Switch™とロマサガRSの事例から](https://employment.en-japan.com/engineerhub/entry/2019/08/01/103000#%E3%81%9D%E3%82%82%E3%81%9D%E3%82%82ErlangElixir%E3%81%A8%E3%81%AF)
 
 ---
@@ -266,7 +287,7 @@ Webpack is watching the files…
 
 ### PhoenixでのMVC
 
-#### Controller
+#### Routes
 - Endpoint
   - /lib/hello_web/endpoint.ex
 
@@ -275,11 +296,17 @@ Webpack is watching the files…
 
 +++
 
+#### Controller
+- Controller
+  - /lib/hello_web/controllers/page_controller.ex
+
++++
+
 #### View(ビュー）
 
 - Viewファイル
   - /lib/hello_web/views 配下のファイル
-  - Template(およびLayout)をレンダリングする
+  - Template(およびLayout)をレンダリング(表示)する
 
 - Template
   - /lib/hello_web/templates 配下のファイル(.eex)
@@ -300,16 +327,21 @@ Webpack is watching the files…
 
 +++
 
-通常のHTTP通信
+### 通常のHTTP通信
 
-・Request → Server → Response
-・常時接続型
+- Request → Server → Response
+
+<img width=80% alt="web-apps-request-response-640x469" src="https://user-images.githubusercontent.com/38724804/67469128-b852de80-f686-11e9-9590-e7a43291d785.png">
 
 +++
 
-WebSocket
+### WebSocket(常時接続型)
 
-Channelを購読→イベントがあると購読している読者に通知
+- Channelを購読→イベントがあると購読している読者に通知
+
+<img width=80% alt="broadcast" src="https://user-images.githubusercontent.com/38724804/67469165-c56fcd80-f686-11e9-81b4-a610c59043d9.png">
+
++++
 
 - 1. clientでイベントが発生
 - 2. serverへメッセージ送信
